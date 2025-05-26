@@ -47,13 +47,16 @@ exports.listSchools = async (req, res) => {
 
   try {
     const [schools] = await db.execute('SELECT * FROM schools');
+
     const withDistance = schools.map(school => ({
       ...school,
       distance: haversine(userLat, userLon, school.latitude, school.longitude),
     }));
+
     withDistance.sort((a, b) => a.distance - b.distance);
     res.json(withDistance);
   } catch (err) {
+    console.error('❌ Error fetching schools:', err);  // Add this line
     res.status(500).json({ error: 'Failed to fetch schools' });
   }
 };
