@@ -3,7 +3,7 @@
 
 A Node.js and Express-based RESTful API for managing school locations. This system allows users to add schools with geographical coordinates and retrieve a sorted list of schools based on proximity to a user-defined location.
 
-Live Demo: [https://school-management-locations-api-guj9.onrender.com](https://school-management-locations-api-guj9.onrender.com)
+
 
 ---
 
